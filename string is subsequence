@@ -1,0 +1,43 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+  public static boolean isSubsequence(String str, String target) {
+    int i = 0;
+        int j = 0;
+         int count = 0;
+        
+        while(i<str.length() && j<target.length()){
+            if(str.charAt(i)==target.charAt(j)){
+         i++;
+                j++;
+             count++;
+            }
+            else //skipping the characters
+                j++;
+        }
+        
+        if(count==str.length()){
+            return true;
+        }
+        else{
+           return false; 
+        }
+            
+    
+  }
+    
+
+    public static void main(String[] args) {
+        
+        Scanner sc = new Scanner(System.in);
+        String str=sc.nextLine();
+        String tar=sc.nextLine();
+        
+      if(isSubsequence(str,tar)==true){
+            System.out.println("True");
+        }
+        else
+            System.out.print("False");
+    }
+}
